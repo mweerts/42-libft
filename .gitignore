@@ -1,0 +1,40 @@
+# Compiled objects
+*.o
+*.obj
+
+# Static libraries
+*.a
+
+# Shared libraries
+*.so
+*.dylib
+
+# Executables
+a.out
+test
+tests_runner
+
+# Debug files
+*.dSYM/
+vgcore.*
+core
+core.*
+
+# Coverage
+*.gcda
+*.gcno
+*.gcov
+
+# Editors
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Vim
+*.swp
+*.swo
+
+# Temporary files
+*~

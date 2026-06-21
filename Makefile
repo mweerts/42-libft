@@ -5,7 +5,8 @@ COLOUR_END=\033[0m
 
 NAME = libft.a
 CC = cc 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I include/
+SRC_DIR = src/
 SRCS = 	ft_isalpha.c \
 		ft_isdigit.c \
 		ft_isalnum.c \
@@ -62,7 +63,7 @@ SRCS = 	ft_isalpha.c \
 		ft_print_percent.c \
 		get_next_line.c 	
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(addprefix $(SRC_DIR), $(SRCS:.c=.o))
 
 all: $(NAME)
 
@@ -70,7 +71,7 @@ $(NAME) : 	$(OBJS)
 			@echo "$(COLOUR_GREEN)$(BOLD)[LIBFT] Creating libft.a$(COLOUR_END)"
 			@ar rcs $(NAME) $(OBJS)
 
-%.o:%.c
+$(SRC_DIR)%.o: $(SRC_DIR)%.c
 		@echo "$(COLOUR_GREEN)Compiling $<$(COLOUR_END)"
 		@$(CC) $(CFLAGS) -c $< -o $@
 
